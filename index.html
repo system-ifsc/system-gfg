@@ -100,16 +100,19 @@
     <main class="cartao-atualizacao">
       <div class="selo-atualizacao">Sistema em manutenção</div>
       <h1>Nosso site será atualizado</h1>
-      <p>Estamos preparando uma nova experiência para você.</p>
+      <p>Estamos preparando uma nova experiência para você. Atualização prevista para domingo às 18:30.</p>
       <div class="contagem-regressiva" id="contagemRegressiva" role="timer" aria-live="off">Calculando...</div>
     </main>
     <script>
       const contagemRegressiva = document.getElementById("contagemRegressiva");
-      const horarioPrevisto = new Date();
+      const agora = new Date();
+      const horarioPrevisto = new Date(agora);
+      const diasAteDomingo = (7 - agora.getDay()) % 7;
+      horarioPrevisto.setDate(agora.getDate() + diasAteDomingo);
       horarioPrevisto.setHours(18, 30, 0, 0);
 
-      if (horarioPrevisto <= new Date()) {
-        horarioPrevisto.setDate(horarioPrevisto.getDate() + 1);
+      if (horarioPrevisto <= agora) {
+        horarioPrevisto.setDate(horarioPrevisto.getDate() + 7);
       }
 
       let temporizador;
@@ -124,11 +127,12 @@
         }
 
         const segundosRestantes = Math.ceil(milissegundosRestantes / 1000);
-        const horas = String(Math.floor(segundosRestantes / 3600)).padStart(2, "0");
+        const dias = Math.floor(segundosRestantes / 86400);
+        const horas = String(Math.floor((segundosRestantes % 86400) / 3600)).padStart(2, "0");
         const minutos = String(Math.floor((segundosRestantes % 3600) / 60)).padStart(2, "0");
         const segundos = String(segundosRestantes % 60).padStart(2, "0");
 
-        contagemRegressiva.textContent = `Faltam ${horas}:${minutos}:${segundos}`;
+        contagemRegressiva.textContent = `Faltam ${dias}d ${horas}:${minutos}:${segundos}`;
       };
 
       atualizarContagem();
