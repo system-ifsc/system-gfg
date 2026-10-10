@@ -12,6 +12,13 @@
   <meta property="og:description" content="Disciplina, foco e evolução. Conheça nossas modalidades.">
   <meta property="og:image" content="imagens/gfg.png">
   <link rel="icon" type="image/png" href="imagens/logo.png">
+  <script>
+    const horarioPrevisto = new Date();
+    horarioPrevisto.setHours(19, 0, 0, 0);
+    if (Date.now() < horarioPrevisto.getTime()) {
+      window.location.replace("contagem/index.html");
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">

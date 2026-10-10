@@ -95,7 +95,7 @@ O site não está integrado a um servidor de aplicação, banco de dados, servi�
 
 ## ▶️ Como testar
 
-1. Abra `index.html` no navegador ou inicie um servidor local simples, por exemplo, com `py -m http.server 8000`.
+1. Abra `index.html` no navegador ou inicie um servidor local simples, por exemplo, com `py -m http.server 8000`. Antes das 19h, a página inicial mostra a contagem regressiva e abre o site quando ela chega a zero.
 2. Navegue pelas páginas **Início**, **Modalidades**, **Sobre** e **Contato**.
 3. Use os botões de tema para alternar entre as cores cinza e vermelha.
 4. Abra as telas de acesso e cadastro. Os perfis são demonstrativos e ficam somente no navegador.
