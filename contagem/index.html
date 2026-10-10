@@ -115,6 +115,7 @@
           if (milissegundosRestantes <= 0) {
             contagemRegressiva.textContent = "Horário previsto alcançado";
             window.clearInterval(temporizador);
+            window.location.replace("../index.html");
             return;
           }
 

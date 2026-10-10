@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Modalidades</title>
+  <meta name="description" content="Conheça as modalidades do Sistema GFG e escolha o treino ideal para sua evolução.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sistema GFG">
+  <meta property="og:title" content="GFG | Modalidades">
+  <meta property="og:description" content="Disciplina, foco e evolução em cada modalidade do Sistema GFG.">
+  <meta property="og:image" content="imagens/gfg.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GFG | Modalidades">
+  <meta name="twitter:description" content="Treinos pensados para cada objetivo e nível.">
+  <link rel="icon" type="image/png" href="imagens/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="folhaEstiloTemaVermelho" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+</head>
+
+<body class="corpo-pagina-modalidades">
+  <header class="barra-navegacao">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <img class="logo-site" src="imagens/logo.png" data-cinza-src="imagens/logo.png" data-vermelho-src="imagens/gfg%20vermelho.png" alt="System GFG — Centro de Treinamento">
+      <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
+    </a>
+
+    <nav class="ligacoes-navegacao" aria-label="Navegação principal">
+      <a href="index.html" class="ligacao-navegacao">Início</a>
+      <a href="modalidades.html" class="ligacao-navegacao ativo" aria-current="page">Modalidades</a>
+      <a href="sobre.html" class="ligacao-navegacao">Sobre</a>
+      <a href="contato.html" class="ligacao-navegacao">Contato</a>
+    </nav>
+
+    <div class="acoes-navegacao">
+      <div class="seletor-tema" aria-label="Escolha de cor">
+        <button class="opcao-tema opcao-tema-vermelho" type="button" data-opcao-tema="vermelho" aria-label="Usar tema vermelho" aria-pressed="false">
+          <span aria-hidden="true"></span>
+          Vermelho
+        </button>
+        <button class="opcao-tema opcao-tema-cinza" type="button" data-opcao-tema="cinza" aria-label="Usar tema cinza" aria-pressed="false">
+          <span aria-hidden="true"></span>
+          Cinza
+        </button>
+      </div>
+
+      <a href="#telaAcesso" class="botao-acao abrir-acesso">
+        Comece agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </a>
+
+      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuCelular">
+        <span class="icone-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu-celular" id="menuCelular" aria-label="Navegação para celulares">
+    <a href="index.html" class="ligacao-celular">Início</a>
+    <a href="modalidades.html" class="ligacao-celular ativo">Modalidades</a>
+    <a href="sobre.html" class="ligacao-celular">Sobre</a>
+    <a href="contato.html" class="ligacao-celular">Contato</a>
+
+    <div class="separador-celular"></div>
+
+    <a href="#telaAcesso" class="botao-acao botao-acao-celular abrir-acesso">
+      Comece agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <div class="estrutura-modalidades">
+    <div class="barra-superior-modalidades" aria-label="Navegação de modalidades">
+      <a href="#jiu-jitsu">JIU-JITSU</a>
+      <a href="#boxe">BOXE</a>
+      <a href="#muay-thai">MUAY THAI</a>
+      <a href="#todos-niveis">TODOS OS NÍVEIS</a>
+    </div>
+
+    <main class="conteudo-principal-modalidades">
+      <section class="introducao-modalidades">
+        <div class="agrupamento-titulo-introducao">
+          <p class="rotulo-reduzido">ESCOLHA O SEU CAMINHO</p>
+          <h1>TRÊS MODALIDADES.<br>INFINITAS CONQUISTAS.</h1>
+        </div>
+        <p class="texto-introducao">
+          Conheça as modalidades e consulte os horários de referência disponíveis nesta página.
+        </p>
+      </section>
+
+      <section class="cartoes-modalidades" aria-label="Categorias das modalidades">
+        <article class="cartao-modalidade-reduzido">
+          <div class="numero-cartao-reduzido">01</div>
+          <h3>JIU-JITSU</h3>
+          <p>Controle, estratégia e técnica no tatame.</p>
+        </article>
+
+        <article class="cartao-modalidade-reduzido">
+          <div class="numero-cartao-reduzido">02</div>
+          <h3>BOXE</h3>
+          <p>Precisão, velocidade e condição para o combate.</p>
+        </article>
+
+        <article class="cartao-modalidade-reduzido">
+          <div class="numero-cartao-reduzido">03</div>
+          <h3>MUAY THAI</h3>
+          <p>Potência e domínio dos golpes do corpo.</p>
+        </article>
+      </section>
+
+      <section class="painel-apresentacao" id="jiu-jitsu">
+        <div class="imagem-apresentacao">
+          <img src="imagens/Jiu-Jitsu.jpg" data-cinza-src="imagens/Jiu-Jitsu.jpg" data-vermelho-src="mudan%C3%A7a%20de%20cor/imagens/Jiu-Jitsu.jpg" alt="Treino de Jiu-Jitsu">
+        </div>
+
+        <div class="informacoes-apresentacao painel-escuro">
+          <p class="etiqueta">MODALIDADE 01</p>
+          <h2>JIU-JITSU</h2>
+          <p class="descricao">
+            Arte suave que desenvolve controle, raciocínio sob pressão e confiança. Aprenda quedas, posições e finalizações com segurança.
+          </p>
+
+          <div class="etiquetas-informativas">
+            <span>FORÇA FUNCIONAL</span>
+            <span>MOBILIDADE</span>
+            <span>AUTOCONFIANÇA</span>
+          </div>
+
+          <div class="linha-nivel">
+            <span>NÍVEL</span>
+            <strong>Horários de referência</strong>
+          </div>
+
+          <div class="bloco-horarios">
+            <h3>QUADRO DE HORÁRIOS</h3>
+            <p>Os horários abaixo são referências e não confirmam disponibilidade de vaga. Consulte a equipe do centro.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="painel-apresentacao painel-boxe" id="boxe">
+        <div class="imagem-apresentacao">
+          <img src="imagens/Boxe.jpg" data-cinza-src="imagens/Boxe.jpg" data-vermelho-src="mudan%C3%A7a%20de%20cor/imagens/Boxe.jpg" alt="Treino de Boxe">
+        </div>
+
+        <div class="informacoes-apresentacao painel-escuro">
+          <p class="etiqueta">MODALIDADE 02</p>
+          <h2>BOXE</h2>
+          <p class="descricao">
+            Técnica de mãos, defesa e movimentação em um treino dinâmico. Evolua sua coordenação, foco e resistência.
+          </p>
+
+          <div class="etiquetas-informativas">
+            <span>CARDIO INTENSO</span>
+            <span>COORDENAÇÃO</span>
+            <span>VELOCIDADE</span>
+          </div>
+
+          <div class="linha-nivel">
+            <span>NÍVEL</span>
+            <strong>Horários de referência</strong>
+          </div>
+
+          <div class="bloco-horarios">
+            <h3>QUADRO DE HORÁRIOS</h3>
+            <p>Os horários abaixo são referências e não confirmam disponibilidade de vaga. Consulte a equipe do centro.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="painel-apresentacao painel-muay-thai" id="muay-thai">
+        <div class="imagem-apresentacao">
+          <img src="imagens/Muay Thai.jpg" data-cinza-src="imagens/Muay Thai.jpg" data-vermelho-src="mudan%C3%A7a%20de%20cor/imagens/Muay%20Thai.jpg" alt="Treino de Muay Thai">
+        </div>
+
+        <div class="informacoes-apresentacao painel-vermelho">
+          <p class="etiqueta">MODALIDADE 03</p>
+          <h2>MUAY THAI</h2>
+          <p class="descricao">
+            A arte dos golpes combina potência, resistência e disciplina. Treinos intensos para quem busca evolução real.
+          </p>
+
+          <div class="etiquetas-informativas">
+            <span>CONDICIONAMENTO</span>
+            <span>POTÊNCIA</span>
+            <span>DISCIPLINA</span>
+          </div>
+
+          <div class="linha-nivel">
+            <span>NÍVEL</span>
+            <strong>Horários de referência</strong>
+          </div>
+
+          <div class="bloco-horarios">
+            <h3>QUADRO DE HORÁRIOS</h3>
+            <p>Os horários abaixo são referências e não confirmam disponibilidade de vaga. Consulte a equipe do centro.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="secao-instrutores" id="todos-niveis">
+        <div class="cabecalho-instrutores">
+          <p class="rotulo-reduzido">SOBRE AS AULAS</p>
+          <h2>HORÁRIOS DEMONSTRATIVOS</h2>
+          <p>Os horários exibidos são referências e podem não refletir a agenda atual do centro. Confirme a disponibilidade com a equipe antes de comparecer.</p>
+        </div>
+      </section>
+
+      <section class="painel-experiencia">
+        <div class="texto-experiencia">
+          <p class="rotulo-reduzido">SEU PRIMEIRO TREINO</p>
+          <h2>ESCOLHA SEU PRÓXIMO TREINO.</h2>
+          <p>
+            Os botões de agendamento são demonstrativos e não criam reservas.
+          </p>
+          <button type="button" class="botao-principal botao-claro abrir-agendamento">AGENDAR AULA DEMONSTRATIVA</button>
+        </div>
+
+        <div class="lista-experiencia">
+          <div class="item-lista">
+            <span class="numero-item">01</span>
+            <span>Escolha sua modalidade</span>
+            <span class="seta-item">→</span>
+          </div>
+          <div class="item-lista">
+            <span class="numero-item">02</span>
+            <span>Agende o melhor horário</span>
+            <span class="seta-item">→</span>
+          </div>
+          <div class="item-lista">
+            <span class="numero-item">03</span>
+            <span>Revise sua reserva no painel local</span>
+            <span class="seta-item">→</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape-modalidades">
+      <div class="marca-rodape">
+        <img class="logo-rodape" src="imagens/logo.png" data-cinza-src="imagens/logo.png" data-vermelho-src="imagens/gfg%20vermelho.png" alt="System GFG — Centro de Treinamento">
+        <span>System <span class="destaque-logo">GFG</span></span>
+      </div>
+
+      <div class="endereco-rodape">
+        Centro de treinamento de artes marciais.
+      </div>
+
+      <div class="ligacoes-rodape">
+        <div>
+          <h4>ACADEMIA</h4>
+          <a href="sobre.html">Sobre o projeto</a>
+          <a href="modalidades.html#todos-niveis">Horários de referência</a>
+        </div>
+        <div>
+          <h4>TREINE</h4>
+          <a href="#jiu-jitsu">Jiu-Jitsu</a>
+          <a href="#boxe">Boxe</a>
+          <a href="#muay-thai">Muay Thai</a>
+        </div>
+        <div>
+          <h4>CONTATO</h4>
+          <a href="contato.html">Canais de contato</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="tela-acesso" id="telaAcesso" aria-hidden="true">
+    <section class="cartao-acesso" role="dialog" aria-modal="true" aria-labelledby="tituloAcesso">
+      <a class="botao-fechar-acesso" href="#" aria-label="Fechar autenticação">&times;</a>
+
+      <div class="icone-acesso" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="31" fill="rgba(255,255,255,.16)"/>
+          <path d="M32 14c-8 0-13 6-13 14 0 5 2 8 4 11-1 5-5 7-11 9 6 7 13 10 20 10s14-3 20-10c-6-2-10-4-11-9 2-3 4-6 4-11 0-8-5-14-13-14Z" fill="#eee8f2"/>
+        </svg>
+      </div>
+
+      <div class="cabecalho-acesso">
+        <p class="rotulo-acesso">System GFG</p>
+        <h1 id="tituloAcesso">Bem-vindo de volta</h1>
+        <p id="subtituloAcesso">Acesse sua conta para continuar</p>
+      </div>
+
+      <div class="abas-acesso" role="tablist" aria-label="Tipo de acesso">
+        <button class="aba-acesso esta-ativo" id="abaEntrar" type="button" role="tab" aria-selected="true">Entrar</button>
+        <button class="aba-acesso" id="abaCadastro" type="button" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+
+      <div class="formulario-acesso">
+        <label class="campo-acesso">
+          <span>E-mail</span>
+          <span class="controle-campo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+            <input type="email" placeholder="seuemail@exemplo.com" aria-label="E-mail">
+          </span>
+        </label>
+
+        <label class="campo-acesso campo-nome" id="campoNome" hidden>
+          <span>Nome completo</span>
+          <span class="controle-campo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-4 3-6 7-6s6.2 2 7 6"/></svg>
+            <input type="text" placeholder="Seu nome" aria-label="Nome completo">
+          </span>
+        </label>
+
+        <label class="campo-acesso">
+          <span>Senha</span>
+          <span class="controle-campo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <input id="senhaAcesso" type="password" placeholder="Digite sua senha" aria-label="Senha">
+            <button class="alternar-senha" id="alternarSenha" type="button">Mostrar</button>
+          </span>
+        </label>
+
+        <div class="opcoes-acesso" id="opcoesAcesso">
+          <label class="lembrar-dados"><input type="checkbox"> <span>Lembrar de mim</span></label>
+          <button type="button" class="recuperar-senha">Esqueci minha senha</button>
+        </div>
+
+        <button class="botao-enviar-acesso" type="button">ENTRAR</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

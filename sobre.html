@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Sobre</title>
+  <meta name="description" content="Conheça o Centro de Treinamento System GFG e as modalidades oferecidas.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" type="image/png" href="imagens/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="folhaEstiloTemaVermelho" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+</head>
+<body class="pagina-utilitaria">
+  <header class="barra-navegacao">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <img class="logo-site" src="imagens/logo.png" data-cinza-src="imagens/logo.png" data-vermelho-src="imagens/gfg%20vermelho.png" alt="System GFG — Centro de Treinamento">
+      <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
+    </a>
+
+    <nav class="ligacoes-navegacao" aria-label="Navegação principal">
+      <a href="index.html" class="ligacao-navegacao">Início</a>
+      <a href="modalidades.html" class="ligacao-navegacao">Modalidades</a>
+      <a href="sobre.html" class="ligacao-navegacao ativo" aria-current="page">Sobre</a>
+      <a href="contato.html" class="ligacao-navegacao">Contato</a>
+    </nav>
+
+    <div class="acoes-navegacao">
+      <div class="seletor-tema" aria-label="Escolha de cor">
+        <button class="opcao-tema opcao-tema-vermelho" type="button" data-opcao-tema="vermelho" aria-label="Usar tema vermelho" aria-pressed="false"><span aria-hidden="true"></span>Vermelho</button>
+        <button class="opcao-tema opcao-tema-cinza" type="button" data-opcao-tema="cinza" aria-label="Usar tema cinza" aria-pressed="false"><span aria-hidden="true"></span>Cinza</button>
+      </div>
+      <a href="#telaAcesso" class="botao-acao abrir-acesso">
+        Minha conta
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+      <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuCelular">
+        <span class="icone-menu"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu-celular" id="menuCelular" aria-label="Navegação para celulares">
+    <a href="index.html" class="ligacao-celular">Início</a>
+    <a href="modalidades.html" class="ligacao-celular">Modalidades</a>
+    <a href="sobre.html" class="ligacao-celular ativo" aria-current="page">Sobre</a>
+    <a href="contato.html" class="ligacao-celular">Contato</a>
+    <div class="separador-celular"></div>
+    <a href="#telaAcesso" class="botao-acao botao-acao-celular abrir-acesso">Minha conta</a>
+  </nav>
+
+  <main class="pagina-informativa">
+    <section class="destaque-informativo">
+      <div>
+        <p class="sobretitulo">Centro de Treinamento System GFG</p>
+        <h1>Mais foco.<br>Mais evolução.</h1>
+      </div>
+      <div class="texto-destaque-informativo">
+        <p>O System GFG é um centro de treinamento dedicado às artes marciais. Esta página apresenta sua proposta e as modalidades disponíveis; conheça o espaço e encontre o treino que combina com você.</p>
+        <a class="botao-acao" href="modalidades.html">Explorar modalidades</a>
+      </div>
+    </section>
+
+    <section class="secao-informativa" aria-labelledby="propositoSobre">
+      <div class="cabecalho-secao-informativa">
+        <p class="sobretitulo">Nossa proposta</p>
+        <h2 id="propositoSobre">Uma experiência simples para começar.</h2>
+      </div>
+      <p class="introducao-informativa">O Centro de Treinamento System GFG reúne diferentes modalidades para quem busca desenvolver técnica, condicionamento, disciplina e confiança.</p>
+      <div class="grade-recursos-informativos">
+        <article class="recurso-informativo">
+          <span class="numero-informativo">01</span>
+          <h3>Conhecer</h3>
+          <p>Conheça Jiu-Jitsu, Boxe e Muay Thai e descubra as características de cada modalidade.</p>
+        </article>
+        <article class="recurso-informativo">
+          <span class="numero-informativo">02</span>
+          <h3>Experimentar</h3>
+          <p>Explore as modalidades e escolha qual delas você gostaria de conhecer melhor.</p>
+        </article>
+        <article class="recurso-informativo">
+          <span class="numero-informativo">03</span>
+          <h3>Planejar</h3>
+          <p>Encontre informações para dar o próximo passo e começar sua jornada nas artes marciais.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="final-informativo">
+      <div>
+        <p class="sobretitulo">Importante</p>
+        <h2>Treino de verdade. Evolução todos os dias.</h2>
+        <p>O System GFG é um centro de treinamento. O site reúne informações sobre as modalidades e recursos para os alunos. Os horários publicados são referências e devem ser confirmados com a equipe.</p>
+      </div>
+      <a class="ligacao-texto" href="contato.html">Ver informações de contato <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <div class="tela-acesso" id="telaAcesso" aria-hidden="true">
+    <section class="cartao-acesso" role="dialog" aria-modal="true" aria-labelledby="tituloAcesso">
+      <a class="botao-fechar-acesso" href="#" aria-label="Fechar autenticação">&times;</a>
+      <div class="icone-acesso" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" fill="rgba(255,255,255,.16)"/><path d="M32 14c-8 0-13 6-13 14 0 5 2 8 4 11-1 5-5 7-11 9 6 7 13 10 20 10s14-3 20-10c-6-2-10-4-11-9 2-3 4-6 4-11 0-8-5-14-13-14Z" fill="#eee8f2"/></svg></div>
+      <div class="cabecalho-acesso">
+        <p class="rotulo-acesso">System GFG</p>
+        <h1 id="tituloAcesso">Bem-vindo de volta</h1>
+        <p id="subtituloAcesso">Acesse sua conta para continuar</p>
+      </div>
+      <div class="abas-acesso" role="tablist" aria-label="Tipo de acesso">
+        <button class="aba-acesso esta-ativo" id="abaEntrar" type="button" role="tab" aria-selected="true">Entrar</button>
+        <button class="aba-acesso" id="abaCadastro" type="button" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+      <div class="formulario-acesso">
+        <label class="campo-acesso">
+          <span>E-mail</span>
+          <span class="controle-campo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+            <input type="email" placeholder="seuemail@exemplo.com" aria-label="E-mail">
+          </span>
+        </label>
+        <label class="campo-acesso campo-nome" id="campoNome" hidden>
+          <span>Nome completo</span>
+          <span class="controle-campo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-4 3-6 7-6s6.2 2 7 6"/></svg>
+            <input type="text" placeholder="Seu nome" aria-label="Nome completo">
+          </span>
+        </label>
+        <label class="campo-acesso">
+          <span>Senha</span>
+          <span class="controle-campo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <input id="senhaAcesso" type="password" placeholder="Digite sua senha" aria-label="Senha">
+            <button class="alternar-senha" id="alternarSenha" type="button">Mostrar</button>
+          </span>
+        </label>
+        <div class="opcoes-acesso" id="opcoesAcesso">
+          <label class="lembrar-dados"><input type="checkbox"> <span>Lembrar de mim</span></label>
+          <button type="button" class="recuperar-senha">Esqueci minha senha</button>
+        </div>
+        <button class="botao-enviar-acesso" type="button">ENTRAR</button>
+      </div>
+      <p class="aviso-aplicativo">Este acesso ainda não está conectado ao sistema do centro: os dados ficam somente neste navegador e não sincronizam.</p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
