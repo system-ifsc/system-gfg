@@ -3,8 +3,8 @@
     "gfg-demo-perfis-v1",
     "gfg-demo-session-v1",
     "gfg-demo-bookings-v1",
-    "gfg-theme",
   ];
+  const CHAVE_TEMA = "gfg-theme";
 
   const HORARIOS = {
     "jiu-jitsu": {
@@ -64,34 +64,109 @@
     aviso.hidden = false;
   };
 
-  const definirTema = (tema) => {
-    const temaSelecionado = tema === "vermelho" || tema === "red" ? "vermelho" : "cinza";
+  const definirTema = (tema, salvar = false) => {
+    let temaSelecionado = tema === "vermelho" || tema === "red" ? "vermelho" : "cinza";
+    if (salvar) {
+      try {
+        const temaExistente = localStorage.getItem(CHAVE_TEMA);
+        if (temaExistente === "vermelho" || temaExistente === "red") {
+          temaSelecionado = "vermelho";
+        } else if (temaExistente === "cinza") {
+          temaSelecionado = "cinza";
+        } else {
+          localStorage.setItem(CHAVE_TEMA, temaSelecionado);
+        }
+      } catch (erro) {
+        exibirAviso(`Não foi possível salvar sua preferência de cor: ${erro.message}`, true);
+      }
+    }
+
     document.documentElement.dataset.tema = temaSelecionado;
 
     const folhaAlternativa = buscarPorId("folhaEstiloTemaVermelho");
     if (folhaAlternativa) folhaAlternativa.disabled = temaSelecionado !== "vermelho";
 
+    const metaTema = document.querySelector('meta[name="theme-color"]');
+    if (metaTema) metaTema.content = temaSelecionado === "vermelho" ? "#140707" : "#111111";
+
     document.querySelectorAll("img[data-cinza-src][data-vermelho-src]").forEach((imagem) => {
       imagem.src = temaSelecionado === "vermelho" ? imagem.dataset.vermelhoSrc : imagem.dataset.cinzaSrc;
     });
-
-    document.querySelectorAll(".opcao-tema").forEach((botao) => {
-      const ativo = botao.dataset.opcaoTema === temaSelecionado;
-      botao.classList.toggle("esta-ativo", ativo);
-      botao.setAttribute("aria-pressed", String(ativo));
-    });
   };
 
-  const configurarSeletorTema = () => {
-    definirTema("cinza");
+  const obterTemaSalvo = () => {
+    try {
+      const tema = localStorage.getItem(CHAVE_TEMA);
+      if (tema === "vermelho" || tema === "red") return "vermelho";
+      return tema === "cinza" ? tema : null;
+    } catch (erro) {
+      exibirAviso(`Não foi possível carregar sua preferência de cor: ${erro.message}`, true);
+      return null;
+    }
+  };
 
-    document.querySelectorAll(".opcao-tema").forEach((botao) => {
+  const configurarEscolhaInicialTema = () => {
+    const selecao = document.createElement("section");
+    selecao.className = "selecao-inicial-tema";
+    selecao.setAttribute("role", "dialog");
+    selecao.setAttribute("aria-modal", "true");
+    selecao.setAttribute("aria-labelledby", "tituloEscolhaTema");
+    selecao.innerHTML = `
+      <div class="cartao-escolha-tema">
+        <p class="sobretitulo-escolha-tema">PERSONALIZE SUA EXPERIÊNCIA</p>
+        <h1 id="tituloEscolhaTema">Qual cor combina com você?</h1>
+        <p>Essa escolha definirá as cores do site e não poderá ser alterada depois.</p>
+        <div class="opcoes-escolha-tema">
+          <button class="botao-escolha-tema tema-vermelho" type="button" data-opcao-tema="vermelho">
+            <span aria-hidden="true"></span>
+            Vermelho
+          </button>
+          <button class="botao-escolha-tema tema-cinza" type="button" data-opcao-tema="cinza">
+            <span aria-hidden="true"></span>
+            Cinza
+          </button>
+        </div>
+      </div>
+    `;
+    document.body.classList.add("tema-pendente");
+    document.body.append(selecao);
+
+    selecao.querySelectorAll("[data-opcao-tema]").forEach((botao) => {
       botao.addEventListener("click", () => {
-        const selecionado = botao.dataset.opcaoTema;
-        if (selecionado !== "vermelho" && selecionado !== "cinza") return;
-        definirTema(selecionado);
+        const temaEscolhido = botao.dataset.opcaoTema;
+        const temaSalvo = obterTemaSalvo();
+        const tema = temaSalvo || temaEscolhido;
+        definirTema(tema, !temaSalvo);
+        document.body.classList.remove("tema-pendente");
+        selecao.remove();
+        document.querySelector(".logo")?.focus();
       });
     });
+
+    selecao.addEventListener("keydown", (evento) => {
+      if (evento.key !== "Tab") return;
+      const botoes = selecao.querySelectorAll(".botao-escolha-tema");
+      const primeiro = botoes[0];
+      const ultimo = botoes[botoes.length - 1];
+      if (evento.shiftKey && document.activeElement === primeiro) {
+        evento.preventDefault();
+        ultimo.focus();
+      } else if (!evento.shiftKey && document.activeElement === ultimo) {
+        evento.preventDefault();
+        primeiro.focus();
+      }
+    });
+
+    selecao.querySelector(".botao-escolha-tema").focus();
+  };
+
+  const configurarTemaDefinitivo = () => {
+    const temaSalvo = obterTemaSalvo();
+    definirTema(temaSalvo || "cinza");
+
+    if (!temaSalvo) {
+      configurarEscolhaInicialTema();
+    }
   };
 
   const configurarMenuCelular = () => {
@@ -265,18 +340,14 @@
       conteudo.innerHTML = `
         <div class="pagina-agendamento">
           <header class="barra-agendamento">
-            <a class="marca-agendamento" href="#" data-acao="fechar" aria-label="Voltar ao site System GFG">
-              <img class="simbolo-marca-agendamento" src="imagens/logo.png" data-cinza-src="imagens/logo.png" data-vermelho-src="imagens/gfg%20vermelho.png" alt="">
-              <span class="texto-marca-agendamento">System <strong>GFG</strong></span>
+            <a href="index.html" class="logo" aria-label="Voltar para o início">
+              <img class="logo-site" src="imagens/logo cinza.jpeg" data-cinza-src="imagens/logo cinza.jpeg" data-vermelho-src="imagens/logo vermelha.jpeg" alt="System GFG — Centro de Treinamento">
+              <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
             </a>
             <nav class="navegacao-agendamento" aria-label="Navegação principal">
               <span class="navegacao-agendamento-ativa" aria-current="page">Agendamentos</span>
             </nav>
             <div class="acoes-agendamento">
-              <div class="seletor-tema seletor-tema-agendamento" aria-label="Escolha de cor">
-                <button class="opcao-tema opcao-tema-vermelho" type="button" data-opcao-tema="vermelho" aria-label="Usar tema vermelho" aria-pressed="false"><span aria-hidden="true"></span>Vermelho</button>
-                <button class="opcao-tema opcao-tema-cinza" type="button" data-opcao-tema="cinza" aria-label="Usar tema cinza" aria-pressed="false"><span aria-hidden="true"></span>Cinza</button>
-              </div>
               <button class="botao-area-aluno" type="button" data-acao="aulas" aria-label="Ver minhas aulas">Minhas aulas <span aria-hidden="true">&rarr;</span></button>
             </div>
           </header>
@@ -339,14 +410,6 @@
       `;
 
       definirTema(document.documentElement.dataset.tema);
-      conteudo.querySelectorAll(".opcao-tema").forEach((botao) => {
-        botao.addEventListener("click", () => {
-          const tema = botao.dataset.opcaoTema;
-          if (tema !== "vermelho" && tema !== "cinza") return;
-          definirTema(tema);
-        });
-      });
-
       const formularioAgendamento = buscarPorId("formularioAgendamento");
       const seletorModalidade = formularioAgendamento.elements.namedItem("modalidade");
       const campoData = formularioAgendamento.elements.data;
@@ -516,19 +579,13 @@
       conteudo.innerHTML = `
         <div class="pagina-agendamento">
           <header class="barra-agendamento">
-            <a class="marca-agendamento" href="#" data-acao="fechar" aria-label="Voltar ao site System GFG">
-              <img class="simbolo-marca-agendamento" src="imagens/logo.png" data-cinza-src="imagens/logo.png" data-vermelho-src="imagens/gfg%20vermelho.png" alt="">
-              <span class="texto-marca-agendamento">System <strong>GFG</strong></span>
+            <a href="index.html" class="logo" aria-label="Voltar para o início">
+              <img class="logo-site" src="imagens/logo cinza.jpeg" data-cinza-src="imagens/logo cinza.jpeg" data-vermelho-src="imagens/logo vermelha.jpeg" alt="System GFG — Centro de Treinamento">
+              <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
             </a>
             <nav class="navegacao-agendamento" aria-label="Navegação principal">
               <span class="navegacao-agendamento-ativa" aria-current="page">Minhas aulas</span>
             </nav>
-            <div class="acoes-agendamento">
-              <div class="seletor-tema seletor-tema-agendamento" aria-label="Escolha de cor">
-                <button class="opcao-tema opcao-tema-vermelho" type="button" data-opcao-tema="vermelho" aria-label="Usar tema vermelho" aria-pressed="false"><span aria-hidden="true"></span>Vermelho</button>
-                <button class="opcao-tema opcao-tema-cinza" type="button" data-opcao-tema="cinza" aria-label="Usar tema cinza" aria-pressed="false"><span aria-hidden="true"></span>Cinza</button>
-              </div>
-            </div>
           </header>
           <main class="painel-minhas-aulas">
             <header class="cabecalho-minhas-aulas">
@@ -558,13 +615,6 @@
       `;
 
       definirTema(document.documentElement.dataset.tema);
-      conteudo.querySelectorAll(".opcao-tema").forEach((botao) => {
-        botao.addEventListener("click", () => {
-          const tema = botao.dataset.opcaoTema;
-          if (tema !== "vermelho" && tema !== "cinza") return;
-          definirTema(tema);
-        });
-      });
     };
 
     const abrir = (gatilho, modalidade = "") => {
@@ -678,7 +728,7 @@
 
   const inicializar = () => {
     limparDadosAntigos();
-    configurarSeletorTema();
+    configurarTemaDefinitivo();
     configurarMenuCelular();
     configurarFormularioContato();
     renderizarHorarios();
@@ -691,3 +741,5 @@
     inicializar();
   }
 })();
+
+

@@ -31,7 +31,7 @@
 
 O **Sistema GFG** é um protótipo front-end para apresentar um centro de treinamento de artes marciais, suas modalidades, horários de referência e recursos demonstrativos para os alunos.
 
-Login e cadastro são demonstrações visuais: ao enviar qualquer um dos formulários, a tela mostra o agendamento sem autenticar ou guardar os dados digitados. A seleção de horários e o formulário de contato também são demonstrativos; nada é enviado ou salvo. A preferência de tema vale apenas enquanto a página está aberta e volta ao padrão ao recarregar.
+Login e cadastro são demonstrações visuais: ao enviar qualquer um dos formulários, a tela mostra o agendamento sem autenticar ou guardar os dados digitados. A seleção de horários e o formulário de contato também são demonstrativos; nada é enviado ou salvo. Na primeira visita, escolha entre os temas vermelho e cinza; a cor escolhida fica salva neste navegador e não pode ser alterada pelo site.
 
 Os horários exibidos nesta versão são apenas referências e não confirmam disponibilidade de vaga; consulte a equipe do centro.
 
@@ -95,13 +95,12 @@ O site não está integrado a um servidor de aplicação, banco de dados, servi�
 
 ## ▶️ Como testar
 
-1. Abra `index.html` no navegador ou inicie um servidor local simples, por exemplo, com `py -m http.server 8000`. Antes das 19h, a página inicial mostra a contagem regressiva e abre o site quando ela chega a zero.
+1. Abra `index.html` no navegador ou inicie um servidor local simples, por exemplo, com `py -m http.server 8000`.
 2. Navegue pelas páginas **Início**, **Modalidades**, **Sobre** e **Contato**.
-3. Use os botões de tema para alternar entre as cores cinza e vermelha.
+3. Na primeira visita, escolha a cor do site. Essa preferência permanece em todas as páginas e não há opção para trocá-la depois.
 4. Abra as telas de acesso e cadastro. Os perfis são demonstrativos e ficam somente no navegador.
 5. Na página **Contato**, experimente o formulário; a mensagem não é enviada nem salva.
 6. Na página **Modalidades**, consulte os horários de referência e explore a interface de agendamento. Nenhuma reserva é criada ou salva.
-7. Abra `contagem/index.html` para ver a contagem regressiva; ao chegar a zero, ela redireciona para `index.html`.
 
 ---
 
@@ -140,7 +139,6 @@ Sistema GFG
 ├── Modalidades e horários de referência
 ├── Sobre o centro
 ├── Contato
-├── Contagem regressiva de atualização
 └── Recursos de demonstração no navegador
 ```
 
@@ -152,7 +150,7 @@ O Sistema GFG busca oferecer:
 
 - ✅ Apresentar as modalidades e horários de referência.
 - ✅ Oferecer navegação e recursos locais para explorar a experiência de agendamento.
-- ✅ Permitir testar o tema visual e a interface responsiva.
+- ✅ Escolher uma única vez o tema visual e explorar a interface responsiva.
 
 ---
 
