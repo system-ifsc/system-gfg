@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Sobre</title>
+  <meta name="description" content="Conheça o Centro de Treinamento System GFG e as modalidades oferecidas.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" type="image/jpeg" href="imagens/logo cinza.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="folhaEstiloTemaVermelho" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+  <link rel="stylesheet" href="refinamento.css">
+</head>
+<body class="pagina-utilitaria">
+  <header class="barra-navegacao">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <img class="logo-site" src="imagens/logo cinza.jpeg" data-cinza-src="imagens/logo cinza.jpeg" data-vermelho-src="imagens/logo vermelha.jpeg" alt="System GFG — Centro de Treinamento">
+      <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
+    </a>
+
+    <nav class="ligacoes-navegacao" aria-label="Navegação principal">
+      <a href="index.html" class="ligacao-navegacao">Início</a>
+      <a href="modalidades.html" class="ligacao-navegacao">Modalidades</a>
+      <a href="sobre.html" class="ligacao-navegacao ativo" aria-current="page">Sobre</a>
+      <a href="contato.html" class="ligacao-navegacao">Contato</a>
+    </nav>
+
+    <div class="acoes-navegacao">
+      <a href="modalidades.html" class="botao-acao">
+        Modalidades
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+      <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuCelular">
+        <span class="icone-menu"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu-celular" id="menuCelular" aria-label="Navegação para celulares">
+    <a href="index.html" class="ligacao-celular">Início</a>
+    <a href="modalidades.html" class="ligacao-celular">Modalidades</a>
+    <a href="sobre.html" class="ligacao-celular ativo" aria-current="page">Sobre</a>
+    <a href="contato.html" class="ligacao-celular">Contato</a>
+    <div class="separador-celular"></div>
+    <a href="modalidades.html" class="botao-acao botao-acao-celular">Modalidades</a>
+  </nav>
+
+  <main class="pagina-informativa">
+    <section class="destaque-informativo">
+      <div>
+        <p class="sobretitulo">Centro de Treinamento System GFG</p>
+        <h1>Mais foco.<br>Mais evolução.</h1>
+      </div>
+      <div class="texto-destaque-informativo">
+        <p>O System GFG é um centro de treinamento dedicado às artes marciais. Esta página apresenta sua proposta e as modalidades disponíveis; conheça o espaço e encontre o treino que combina com você.</p>
+        <a class="botao-acao" href="modalidades.html">Explorar modalidades</a>
+      </div>
+    </section>
+
+    <section class="secao-informativa" aria-labelledby="propositoSobre">
+      <div class="cabecalho-secao-informativa">
+        <p class="sobretitulo">Nossa proposta</p>
+        <h2 id="propositoSobre">Uma experiência simples para começar.</h2>
+      </div>
+      <p class="introducao-informativa">O Centro de Treinamento System GFG reúne diferentes modalidades para quem busca desenvolver técnica, condicionamento, disciplina e confiança.</p>
+      <div class="grade-recursos-informativos">
+        <article class="recurso-informativo">
+          <span class="numero-informativo">01</span>
+          <h3>Conhecer</h3>
+          <p>Conheça Jiu-Jitsu, Boxe e Muay Thai e descubra as características de cada modalidade.</p>
+        </article>
+        <article class="recurso-informativo">
+          <span class="numero-informativo">02</span>
+          <h3>Experimentar</h3>
+          <p>Explore as modalidades e escolha qual delas você gostaria de conhecer melhor.</p>
+        </article>
+        <article class="recurso-informativo">
+          <span class="numero-informativo">03</span>
+          <h3>Planejar</h3>
+          <p>Encontre informações para dar o próximo passo e começar sua jornada nas artes marciais.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="final-informativo">
+      <div>
+        <p class="sobretitulo">Importante</p>
+        <h2>Treino de verdade. Evolução todos os dias.</h2>
+        <p>O site apresenta o Centro de Treinamento System GFG e suas modalidades. Para saber mais sobre as aulas, entre em contato com a equipe.</p>
+      </div>
+      <a class="ligacao-texto" href="contato.html">Ver informações de contato <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <script src="site.js"></script>
+</body>
+</html>

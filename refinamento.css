@@ -1,0 +1,973 @@
+:root {
+  --largura-conteudo-institucional: 1220px;
+  --raio-painel-institucional: 14px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 76% 18%, var(--brilho-principal-modalidades), transparent 34rem),
+    var(--fundo-pagina-modalidades);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--marca-forte);
+  outline-offset: 3px;
+}
+
+.barra-navegacao {
+  width: min(var(--largura-conteudo-institucional), calc(100% - 48px));
+  height: 72px;
+  padding: 0 20px;
+  border-radius: var(--raio-painel-institucional);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .34), inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+
+.logo-site,
+.logo-rodape {
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--marca) 22%, transparent));
+}
+
+.ligacoes-navegacao {
+  gap: 2px;
+}
+
+.ligacao-navegacao {
+  padding-inline: 13px;
+}
+
+.acoes-navegacao .botao-acao,
+.botao-acao {
+  height: 46px;
+  padding-inline: 17px;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--marca) 22%, transparent);
+  white-space: nowrap;
+}
+
+.conteudo-inicial {
+  width: min(var(--largura-conteudo-institucional), 100%);
+  padding: 34px 32px 56px;
+}
+
+.conteudo-destaque {
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: clamp(32px, 5vw, 76px);
+  width: 100%;
+  min-height: min(650px, calc(100svh - 150px));
+  margin: 0 auto;
+  padding: 12px 0 64px;
+}
+
+.texto-destaque {
+  max-width: 600px;
+  margin: 0;
+  text-align: left;
+  animation: entrada-institucional .7s ease both;
+}
+
+.conteudo-destaque h1 {
+  max-width: 620px;
+  font-size: 6rem;
+  line-height: .9;
+  letter-spacing: 0;
+}
+
+.descricao-destaque {
+  max-width: 470px;
+  margin-top: 22px;
+  font-size: 16px;
+}
+
+.acoes-destaque {
+  justify-content: flex-start;
+  margin-top: 26px;
+}
+
+.imagem-destaque {
+  height: clamp(360px, 42vw, 560px);
+  max-height: 560px;
+  margin: 0;
+  border-radius: var(--raio-painel-institucional);
+  opacity: 1;
+  mask-image: none;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .42);
+  animation: entrada-institucional .85s .08s ease both;
+}
+
+.secao-modalidades {
+  padding: 38px 0 20px;
+  scroll-margin-top: 110px;
+}
+
+.cabecalho-secao {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, .7fr);
+  align-items: end;
+  column-gap: 24px;
+}
+
+.cabecalho-secao .sobretitulo-secao {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.cabecalho-secao h2 {
+  margin-top: 8px;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.cabecalho-secao > p:last-child {
+  max-width: 340px;
+  justify-self: end;
+  margin: 0 0 3px;
+  line-height: 1.6;
+}
+
+.grade-modalidades {
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.cartao-modalidade {
+  min-height: 0;
+  padding: 0 20px 22px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, .075), rgba(0, 0, 0, .22));
+  border-radius: var(--raio-painel-institucional);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .2);
+}
+
+.imagem-modalidade {
+  width: calc(100% + 40px);
+  height: 180px;
+  margin: 0 -20px 18px;
+  filter: saturate(.95) contrast(1.06);
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.cartao-modalidade:hover .imagem-modalidade {
+  transform: scale(1.035);
+  filter: saturate(1.08) contrast(1.08);
+}
+
+.cartao-modalidade h3 {
+  margin-top: 8px;
+  font-size: 1.6rem;
+}
+
+.cartao-modalidade p {
+  min-height: 0;
+  margin-top: 6px;
+}
+
+.cartao-modalidade a {
+  align-items: center;
+  margin-top: 16px;
+}
+
+.estrutura-modalidades {
+  width: min(var(--largura-conteudo-institucional), calc(100% - 48px));
+  margin-bottom: 0;
+  border-radius: var(--raio-painel-institucional);
+}
+
+body.corpo-pagina-modalidades {
+  padding-bottom: 0;
+}
+
+@media (max-width: 780px) {
+  body.corpo-pagina-modalidades .estrutura-modalidades {
+    margin-bottom: 0;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.logo-site,
+.logo-rodape,
+.simbolo-marca-agendamento {
+  filter: none !important;
+}
+
+.pagina-contato .pagina-informativa {
+  gap: 14px;
+}
+
+.pagina-contato .destaque-informativo {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  min-height: 220px;
+  padding: 28px clamp(28px, 4vw, 52px);
+  border-top: 0;
+  border-left: 3px solid var(--marca);
+}
+
+.pagina-contato .destaque-informativo h1 {
+  font-size: 4.2rem;
+}
+
+.pagina-contato .texto-destaque-informativo {
+  justify-self: end;
+  max-width: 480px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, .035);
+  border-left: 2px solid var(--marca);
+}
+
+.pagina-contato .texto-destaque-informativo p {
+  color: var(--texto-suave);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+.pagina-contato .organizacao-contato {
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.pagina-contato .introducao-contato {
+  max-width: 390px;
+}
+
+.pagina-contato .formulario-contato {
+  width: 100%;
+  max-width: 740px;
+  justify-self: end;
+}
+
+.pagina-contato .botao-enviar-contato {
+  width: fit-content;
+  min-width: 210px;
+  justify-self: end;
+}
+
+.pagina-contato .final-informativo {
+  border-left: 3px solid var(--marca);
+}
+
+@media (max-width: 760px) {
+  .pagina-contato .destaque-informativo,
+  .pagina-contato .organizacao-contato {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina-contato .destaque-informativo {
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .pagina-contato .texto-destaque-informativo {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .pagina-contato .introducao-contato,
+  .pagina-contato .formulario-contato {
+    max-width: none;
+  }
+
+  .pagina-contato .botao-enviar-contato {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 520px) {
+  .pagina-contato .destaque-informativo h1 {
+    font-size: 3rem;
+  }
+}
+
+.barra-superior-modalidades {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.barra-superior-modalidades a {
+  min-height: 54px;
+  font-size: 12px;
+}
+
+.introducao-modalidades {
+  min-height: 270px;
+  padding: 48px 40px 30px;
+}
+
+.introducao-modalidades h1 {
+  font-size: 4.5rem;
+  letter-spacing: 0;
+}
+
+.texto-introducao {
+  max-width: 360px;
+  font-size: 16px;
+}
+
+.cartoes-modalidades {
+  gap: 14px;
+  padding-inline: 32px;
+}
+
+.cartao-modalidade-reduzido {
+  min-height: 148px;
+  padding: 16px 18px;
+  border-radius: var(--raio-painel-institucional);
+}
+
+.cartao-modalidade-reduzido h3 {
+  margin-top: 26px;
+  font-size: 2rem;
+  letter-spacing: 0;
+}
+
+.painel-apresentacao {
+  min-height: 450px;
+  margin: 24px 32px 0;
+  border-radius: var(--raio-painel-institucional);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .3);
+}
+
+.imagem-apresentacao img {
+  transition: transform .65s ease;
+}
+
+.painel-apresentacao:hover .imagem-apresentacao img {
+  transform: scale(1.025);
+}
+
+.informacoes-apresentacao {
+  padding: clamp(26px, 4vw, 42px);
+}
+
+.informacoes-apresentacao h2 {
+  font-size: 3.4rem;
+  letter-spacing: 0;
+}
+
+.etiquetas-informativas {
+  gap: 7px;
+}
+
+.etiquetas-informativas span {
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+.bloco-horarios {
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+.bloco-horarios .botao-principal {
+  max-width: 220px;
+  min-height: 46px;
+  margin-top: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.secao-instrutores,
+.painel-experiencia {
+  margin-inline: 32px;
+  border-radius: var(--raio-painel-institucional);
+}
+
+.secao-instrutores {
+  padding: 28px 0 20px;
+}
+
+.cabecalho-instrutores {
+  align-items: end;
+  padding: 0 24px 8px;
+}
+
+.cabecalho-instrutores h2,
+.texto-experiencia h2 {
+  letter-spacing: 0;
+}
+
+.cabecalho-instrutores h2,
+.texto-experiencia h2 {
+  font-size: 3.8rem;
+}
+
+.painel-experiencia {
+  margin-top: 22px;
+  padding: 30px 26px 20px;
+  border-radius: var(--raio-painel-institucional);
+}
+
+.rodape-modalidades {
+  margin: 24px 32px 0;
+  padding: 24px 20px;
+  border-radius: var(--raio-painel-institucional) var(--raio-painel-institucional) 0 0;
+}
+
+.pagina-informativa {
+  width: min(var(--largura-conteudo-institucional), calc(100vw - 32px));
+  min-width: 0;
+  gap: 18px;
+}
+
+.pagina-informativa > * {
+  min-width: 0;
+}
+
+.destaque-informativo,
+.secao-informativa,
+.final-informativo,
+.organizacao-contato {
+  border-radius: var(--raio-painel-institucional);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .22);
+}
+
+.destaque-informativo {
+  min-height: 300px;
+  padding: clamp(30px, 5vw, 62px);
+  border-top: 2px solid var(--marca);
+}
+
+.destaque-informativo h1 {
+  font-size: 4.8rem;
+  letter-spacing: 0;
+}
+
+.pagina-informativa .sobretitulo {
+  font-family: var(--fonte-corpo);
+  letter-spacing: .12em;
+}
+
+.secao-informativa {
+  padding: clamp(28px, 4.5vw, 52px);
+}
+
+.cabecalho-secao-informativa h2,
+.final-informativo h2,
+.introducao-contato h2 {
+  font-size: 2.8rem;
+  letter-spacing: 0;
+}
+
+.grade-recursos-informativos {
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.recurso-informativo {
+  min-height: 176px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.recurso-informativo:hover {
+  transform: translateY(-3px);
+  border-color: var(--marca);
+  background: rgba(255, 255, 255, .045);
+}
+
+.organizacao-contato {
+  gap: clamp(24px, 4vw, 52px);
+  padding: clamp(26px, 4.5vw, 52px);
+}
+
+.formulario-contato {
+  gap: 14px;
+}
+
+.formulario-contato .campo-aplicativo input,
+.formulario-contato .campo-aplicativo select,
+.formulario-contato .campo-aplicativo textarea {
+  border-radius: 8px;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.formulario-contato .campo-aplicativo input:hover,
+.formulario-contato .campo-aplicativo select:hover,
+.formulario-contato .campo-aplicativo textarea:hover {
+  border-color: color-mix(in srgb, var(--marca) 55%, transparent);
+}
+
+.final-informativo {
+  padding: clamp(26px, 4vw, 40px);
+}
+
+@keyframes entrada-institucional {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1000px) {
+  .barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    top: 12px;
+    width: calc(100% - 32px);
+    height: 68px;
+  }
+
+  .ligacoes-navegacao,
+  .acoes-navegacao .botao-acao {
+    display: none;
+  }
+
+  .botao-menu {
+    display: grid;
+  }
+
+  .menu-celular {
+    top: 92px;
+    width: calc(100% - 32px);
+  }
+
+  .conteudo-destaque {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 30px;
+  }
+
+  .conteudo-destaque h1 {
+    font-size: 4.5rem;
+  }
+
+  .introducao-modalidades {
+    padding-inline: 30px;
+  }
+
+  .painel-apresentacao {
+    margin-inline: 22px;
+  }
+
+  .secao-instrutores,
+  .painel-experiencia {
+    margin-inline: 22px;
+  }
+
+  .rodape-modalidades {
+    margin-inline: 22px;
+  }
+}
+
+@media (max-width: 780px) {
+  body {
+    padding: 112px 16px 52px;
+  }
+
+  .conteudo-inicial {
+    padding: 22px 4px 38px;
+  }
+
+  .conteudo-destaque {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    min-height: 0;
+    padding: 20px 0 38px;
+  }
+
+  .texto-destaque {
+    max-width: 640px;
+  }
+
+  .conteudo-destaque h1 {
+    font-size: 4rem;
+  }
+
+  .descricao-destaque {
+    margin-top: 18px;
+  }
+
+  .acoes-destaque {
+    justify-content: flex-start;
+    margin-top: 22px;
+  }
+
+  .imagem-destaque {
+    height: clamp(250px, 58vw, 390px);
+    max-height: none;
+  }
+
+  .cabecalho-secao {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cabecalho-secao h2 {
+    font-size: 2rem;
+  }
+
+  .cabecalho-secao > p:last-child {
+    justify-self: start;
+  }
+
+  .grade-modalidades {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cartao-modalidade {
+    display: grid;
+    grid-template-columns: minmax(120px, .72fr) 1fr;
+    align-content: center;
+    column-gap: 18px;
+    padding: 14px;
+  }
+
+  .imagem-modalidade {
+    grid-row: 1 / span 4;
+    width: 100%;
+    height: 152px;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  .cartao-modalidade h3 {
+    margin-top: 4px;
+  }
+
+  .cartao-modalidade p,
+  .cartao-modalidade a {
+    grid-column: 2;
+  }
+
+  .estrutura-modalidades {
+    width: calc(100% + 8px);
+    margin-bottom: 28px;
+  }
+
+  .barra-superior-modalidades {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .introducao-modalidades {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: 0;
+    padding: 34px 24px 24px;
+  }
+
+  .introducao-modalidades h1 {
+    font-size: 2rem;
+    line-height: .96;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: balance;
+  }
+
+  .texto-introducao {
+    justify-self: start;
+  }
+
+  .cartoes-modalidades {
+    grid-template-columns: 1fr;
+    padding-inline: 20px;
+  }
+
+  .cartao-modalidade-reduzido {
+    min-height: 124px;
+  }
+
+  .cartao-modalidade-reduzido h3 {
+    margin-top: 16px;
+    font-size: 1.8rem;
+  }
+
+  .painel-apresentacao {
+    grid-template-columns: 1fr;
+    margin: 18px 20px 0;
+  }
+
+  .imagem-apresentacao {
+    min-height: 0;
+    height: clamp(220px, 58vw, 340px);
+  }
+
+  .informacoes-apresentacao {
+    padding: 24px 20px;
+  }
+
+  .informacoes-apresentacao h2 {
+    font-size: 2.6rem;
+  }
+
+  .cabecalho-instrutores {
+    display: grid;
+    padding-inline: 18px;
+  }
+
+  .secao-instrutores,
+  .painel-experiencia {
+    margin-inline: 20px;
+  }
+
+  .painel-experiencia {
+    grid-template-columns: 1fr;
+    padding: 24px 18px 14px;
+  }
+
+  .painel-experiencia .botao-principal {
+    width: 100%;
+    min-width: 0;
+    max-width: 290px;
+  }
+
+  .rodape-modalidades {
+    grid-template-columns: 1fr;
+    margin-inline: 20px;
+  }
+
+  .rodape-modalidades,
+  .ligacoes-rodape {
+    gap: 18px;
+  }
+
+  .pagina-informativa {
+    gap: 14px;
+  }
+
+  .destaque-informativo {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+  }
+
+  .destaque-informativo h1 {
+    font-size: 3.5rem;
+  }
+
+  .cabecalho-secao-informativa h2,
+  .final-informativo h2,
+  .introducao-contato h2 {
+    font-size: 2.4rem;
+  }
+
+  .organizacao-contato {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-recursos-informativos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .barra-navegacao {
+    width: calc(100% - 24px);
+    padding-inline: 12px;
+  }
+
+  .logo-site {
+    width: 48px;
+    height: 48px;
+  }
+
+  .texto-logo {
+    font-size: .92rem;
+  }
+
+  .acoes-destaque {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .acoes-destaque > a {
+    width: 100%;
+  }
+
+  .cartao-modalidade {
+    grid-template-columns: 110px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 12px;
+  }
+
+  .imagem-modalidade {
+    height: 138px;
+  }
+
+  .cartao-modalidade p {
+    font-size: 13px;
+  }
+
+  .conteudo-destaque h1 {
+    font-size: 3.5rem;
+  }
+
+  .destaque-informativo h1 {
+    font-size: 3rem;
+  }
+
+  .cabecalho-secao-informativa h2,
+  .final-informativo h2,
+  .introducao-contato h2 {
+    font-size: 2rem;
+  }
+
+  .barra-superior-modalidades a {
+    min-height: 46px;
+    padding-inline: 8px;
+    font-size: 10px;
+  }
+
+  .painel-apresentacao,
+  .secao-instrutores,
+  .painel-experiencia,
+  .rodape-modalidades {
+    margin-inline: 12px;
+  }
+
+  .texto-experiencia h2 {
+    font-size: 2.35rem;
+  }
+
+  .linha-formulario-contato {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+.cartao-modalidade {
+  --acento-cartao: var(--marca);
+  position: relative;
+  border-color: rgba(255, 255, 255, .18);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .28);
+}
+
+.cartao-modalidade::after {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 3px;
+  background: var(--acento-cartao);
+  content: "";
+  pointer-events: none;
+}
+
+.numero-modalidade,
+.cartao-modalidade a {
+  color: var(--acento-cartao);
+}
+
+.cartao-modalidade:hover {
+  box-shadow: 0 22px 44px rgba(0, 0, 0, .34);
+}
+
+.painel-apresentacao {
+  --acento-modalidade: var(--marca);
+}
+
+.informacoes-apresentacao {
+  border-top: 3px solid var(--acento-modalidade);
+}
+
+.informacoes-apresentacao .etiqueta {
+  color: var(--acento-modalidade);
+}
+
+.informacoes-apresentacao .etiqueta::before {
+  background: var(--acento-modalidade);
+}
+
+.informacoes-apresentacao .bloco-horarios h3 {
+  color: var(--acento-modalidade);
+}
+
+.informacoes-apresentacao .botao-principal {
+  background: linear-gradient(120deg, var(--acento-modalidade), var(--marca));
+}
+
+.painel-boxe .imagem-apresentacao {
+  grid-column: 2;
+}
+
+.painel-boxe .informacoes-apresentacao {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.estrutura-modalidades .botao-principal,
+.estrutura-modalidades .botao-principal.botao-claro {
+  color: var(--branco);
+  background: var(--fundo-botao-horarios);
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .18);
+}
+
+.painel-experiencia .botao-principal {
+  width: fit-content;
+  min-width: 240px;
+  max-width: 290px;
+  min-height: 46px;
+  padding-inline: 18px;
+}
+
+@media (max-width: 780px) {
+  .painel-experiencia .botao-principal {
+    width: 100%;
+    min-width: 0;
+    max-width: 290px;
+  }
+}
+
+.destaque-informativo {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025));
+}
+
+
+.recurso-informativo {
+  background: linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .02));
+  border-color: rgba(255, 255, 255, .16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+.organizacao-contato {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .025));
+}
+
+.formulario-contato .campo-aplicativo input,
+.formulario-contato .campo-aplicativo select,
+.formulario-contato .campo-aplicativo textarea {
+  background: rgba(0, 0, 0, .34);
+  border-color: rgba(255, 255, 255, .18);
+  border-radius: 6px;
+}
+
+.formulario-contato .campo-aplicativo input:focus,
+.formulario-contato .campo-aplicativo select:focus,
+.formulario-contato .campo-aplicativo textarea:focus {
+  background: rgba(0, 0, 0, .48);
+  border-color: var(--marca-forte);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--marca) 16%, transparent);
+}
+
+.botao-enviar-contato {
+  min-height: 48px;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 780px) {
+  .painel-boxe .imagem-apresentacao,
+  .painel-boxe .informacoes-apresentacao {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Contato</title>
+  <meta name="description" content="Entre em contato com o Centro de Treinamento System GFG.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" type="image/jpeg" href="imagens/logo cinza.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="folhaEstiloTemaVermelho" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+  <link rel="stylesheet" href="refinamento.css">
+</head>
+<body class="pagina-utilitaria pagina-contato">
+  <header class="barra-navegacao">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <img class="logo-site" src="imagens/logo cinza.jpeg" data-cinza-src="imagens/logo cinza.jpeg" data-vermelho-src="imagens/logo vermelha.jpeg" alt="System GFG — Centro de Treinamento">
+      <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
+    </a>
+
+    <nav class="ligacoes-navegacao" aria-label="Navegação principal">
+      <a href="index.html" class="ligacao-navegacao">Início</a>
+      <a href="modalidades.html" class="ligacao-navegacao">Modalidades</a>
+      <a href="sobre.html" class="ligacao-navegacao">Sobre</a>
+      <a href="contato.html" class="ligacao-navegacao ativo" aria-current="page">Contato</a>
+    </nav>
+
+    <div class="acoes-navegacao">
+      <a href="modalidades.html" class="botao-acao">
+        Modalidades
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </a>
+
+      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuCelular">
+        <span class="icone-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu-celular" id="menuCelular" aria-label="Navegação para celulares">
+    <a href="index.html" class="ligacao-celular">Início</a>
+    <a href="modalidades.html" class="ligacao-celular">Modalidades</a>
+    <a href="sobre.html" class="ligacao-celular">Sobre</a>
+    <a href="contato.html" class="ligacao-celular ativo" aria-current="page">Contato</a>
+    <div class="separador-celular"></div>
+    <a href="modalidades.html" class="botao-acao botao-acao-celular">
+      Modalidades
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <main class="pagina-informativa">
+    <section class="destaque-informativo">
+      <div>
+        <p class="sobretitulo">Fale com a gente</p>
+        <h1>Contato</h1>
+      </div>
+      <div class="texto-destaque-informativo">
+        <p>O envio online não está ativo. Os dados preenchidos não são transmitidos nem armazenados.</p>
+      </div>
+    </section>
+
+    <section class="organizacao-contato" aria-label="Formulário de contato">
+      <div class="introducao-contato">
+        <p class="sobretitulo">Envie uma mensagem</p>
+        <h2>Fale com o System GFG.</h2>
+      </div>
+
+      <form class="formulario-contato" id="formularioContato">
+        <div class="linha-formulario-contato">
+          <label class="campo-aplicativo">Nome
+            <input name="nome" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+          </label>
+          <label class="campo-aplicativo">E-mail
+            <input name="email" type="email" autocomplete="email" maxlength="254" required>
+          </label>
+        </div>
+        <label class="campo-aplicativo">Assunto
+          <select name="subject" required>
+            <option value="" selected disabled>Selecione um assunto</option>
+            <option value="modalidades">Modalidades</option>
+            <option value="informacoes">Informações gerais</option>
+            <option value="projeto">Sobre o projeto</option>
+            <option value="outro">Outro</option>
+          </select>
+        </label>
+        <label class="campo-aplicativo">Mensagem
+          <textarea name="message" rows="5" minlength="10" maxlength="1000" required></textarea>
+        </label>
+        <p class="retorno-formulario-contato" id="retornoContato" role="status" aria-live="polite" hidden></p>
+        <button class="botao-acao botao-enviar-contato" type="submit">Validar preenchimento</button>
+      </form>
+    </section>
+
+    <section class="final-informativo">
+      <div>
+        <p class="sobretitulo">Quer explorar?</p>
+        <h2>Conheça as modalidades.</h2>
+        <p>Conheça as opções de treino do System GFG e encontre a modalidade certa para você.</p>
+      </div>
+      <a class="ligacao-texto" href="modalidades.html">Ir para modalidades <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <script src="site.js"></script>
+</body>
+</html>
