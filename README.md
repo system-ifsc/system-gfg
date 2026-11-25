@@ -13,7 +13,7 @@
 ## 👥 Integrantes
 
 - **Gabriel Moraes**
-- **Felipe**
+- **Felipe Mesquita**
 - **Gabriel Henrique**
 
 ## 📚 Informações do Projeto
@@ -29,7 +29,7 @@
 
 ## 📌 Sobre o Projeto
 
-O **Sistema GFG** é um site institucional para apresentar o centro de treinamento e suas modalidades: Muay Thai, Jiu-Jitsu e Boxe. O site não oferece login, cadastro, agendamento, reservas ou ferramentas administrativas. O formulário de contato é apenas demonstrativo e não envia nem armazena mensagens.
+O **Sistema GFG** é um site institucional para apresentar o centro de treinamento e suas modalidades: Muay Thai, Jiu-Jitsu e Boxe. O site não oferece login, cadastro, agendamento, reservas ou ferramentas administrativas. A página Contato direciona ao assistente de IA, sem exigir nome ou e-mail.
 
 Na primeira visita, escolha entre os temas vermelho e cinza. A escolha fica salva neste navegador, conforme o comportamento atual do projeto.
 
@@ -76,15 +76,27 @@ As aulas serão organizadas de acordo com a faixa etária:
 | ⚡ JavaScript | Interações da interface e demonstrações locais no navegador. |
 | 🎨 Figma | Planejamento visual das telas. |
 
-O site é estático e não possui servidor de aplicação, banco de dados, serviço de autenticação ou envio de formulários.
+As páginas institucionais usam HTML, CSS e JavaScript. O chat conta com um servidor Node.js para consultar a IA, sem expor a chave no navegador. Não há banco de dados, autenticação ou envio de formulários.
 
-## ▶️ Como testar
+## ▶️ Como executar com IA real
 
-1. Abra `index.html` no navegador ou inicie um servidor local simples, por exemplo, com `py -m http.server 8000`.
-2. Navegue pelas páginas **Início**, **Modalidades**, **Sobre** e **Contato**.
-3. Na primeira visita, escolha a cor do site. Essa preferência permanece em todas as páginas e não há opção para trocá-la depois.
-4. Na página **Modalidades**, conheça os estilos de treino apresentados.
-5. Na página **Contato**, veja os campos demonstrativos; o formulário não envia nem salva mensagens.
+Requer Node.js 22 ou superior. Não há dependências para instalar.
+
+1. Copie `.env.example` para `.env`.
+2. No `.env`, preencha `GEMINI_API_KEY` com uma chave Gemini configurada pelo responsável pelo projeto no [Google AI Studio](https://aistudio.google.com/api-keys). Não coloque a chave no HTML, no JavaScript do navegador ou no Git. O Gemini oferece uma [faixa gratuita com limites](https://ai.google.dev/gemini-api/docs/pricing), sujeita à disponibilidade do modelo e da conta. Use um projeto no nível gratuito; o código não ativa faturamento nem muda para um modelo pago.
+3. Ajuste `GEMINI_MODEL` se necessário para um modelo habilitado na sua conta (padrão: `gemini-3.5-flash-lite`).
+4. Execute `npm start` e abra **http://localhost:3000**.
+5. Entre em **Tire suas dúvidas com a IA** e envie uma pergunta. Pergunte algo relacionado em seguida para verificar o contexto.
+
+Abrir o HTML diretamente ou usar apenas um servidor estático não ativa a IA. A rota `GET /api/health` indica se a chave está definida, mas não valida acesso ou saldo.
+
+O chat usa a [API generateContent do Google Gemini](https://ai.google.dev/api/generate-content). O servidor envia as últimas 20 mensagens e a base `knowledge.txt` ao modelo. O histórico fica na memória da página, sem banco de dados nem localStorage. O Google processa as mensagens conforme suas políticas e pode usar conteúdo do nível gratuito para melhorar seus produtos; não envie dados sensíveis. **Nova conversa** limpa o histórico local. Erros preservam a pergunta para nova tentativa.
+
+Atualize `knowledge.txt` com informações oficiais para permitir respostas sobre preços, horários e contatos. Enquanto esses dados não estiverem disponíveis, o assistente deve reconhecer que não os conhece. Não há consulta à internet, atendimento humano, agendamento nem matrícula pelo chat. Respostas podem conter erros.
+
+Execute `npm test` para testar o servidor, incluindo contexto, entradas inválidas, indisponibilidade da API e bloqueio de arquivos privados. Os testes usam uma API simulada; uma conversa real precisa da chave configurada.
+
+Para hospedar, use um serviço com Node.js e variáveis de ambiente, configure `HOST=0.0.0.0` se exigido pelo provedor e publique com HTTPS. O servidor limita cada IP a 12 perguntas por minuto e cada requisição a 100 KB. Para um serviço público com vários usuários, configure também controle de acesso/cotas e limites de gastos; o limite local é por processo e considera o endereço do proxy quando houver um.
 
 ---
 
@@ -108,7 +120,7 @@ O site está sendo construído com:
 
 O objetivo é manter a identidade visual existente em uma interface institucional simples, intuitiva e adaptável a diferentes telas.
 
-O formulário de contato ainda depende de um canal de envio para receber mensagens. Nenhuma informação é armazenada pelo site.
+A página Contato direciona ao chat. O servidor não grava as conversas em banco de dados; as mensagens são processadas pelo provedor de IA.
 
 ---
 
@@ -121,7 +133,7 @@ Sistema GFG
 ├── Modalidades
 ├── Sobre o centro
 ├── Contato
-└── Contato
+└── Assistente IA
 ```
 
 ---
@@ -147,5 +159,5 @@ O site apresenta o Centro de Treinamento System GFG e suas modalidades. O visual
 </p>
 
 <p align="center">
-  Desenvolvido por Gabriel Moraes, Felipe e Gabriel Henrique.
+  Desenvolvido pelos estudantes Gabriel Moraes, Felipe Mesquita e Gabriel Henrique.
 </p>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Aplicativo</title>
+  <meta name="description" content="Download do aplicativo System GFG.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" type="image/jpeg" href="imagens/logo cinza.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="folhaEstiloTemaVermelho" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+  <link rel="stylesheet" href="refinamento.css">
+</head>
+<body class="pagina-utilitaria pagina-aplicativo">
+  <header class="barra-navegacao">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <img class="logo-site" src="imagens/logo cinza.jpeg" data-cinza-src="imagens/logo cinza.jpeg" data-vermelho-src="imagens/logo vermelha.jpeg" alt="System GFG — Centro de Treinamento">
+      <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
+    </a>
+
+    <nav class="ligacoes-navegacao" aria-label="Navegação principal">
+      <a href="index.html" class="ligacao-navegacao">Início</a>
+      <a href="modalidades.html" class="ligacao-navegacao">Modalidades</a>
+      <a href="sobre.html" class="ligacao-navegacao">Sobre</a>
+      <a href="contato.html" class="ligacao-navegacao">Contato</a>
+      <a href="aplicativo.html" class="ligacao-navegacao ativo" aria-current="page">Aplicativo</a>
+    </nav>
+
+    <div class="acoes-navegacao">
+      <a href="modalidades.html" class="botao-acao">
+        Modalidades
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </a>
+
+      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuCelular">
+        <span class="icone-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu-celular" id="menuCelular" aria-label="Navegação para celulares">
+    <a href="index.html" class="ligacao-celular">Início</a>
+    <a href="modalidades.html" class="ligacao-celular">Modalidades</a>
+    <a href="sobre.html" class="ligacao-celular">Sobre</a>
+    <a href="contato.html" class="ligacao-celular">Contato</a>
+    <a href="aplicativo.html" class="ligacao-celular ativo" aria-current="page">Aplicativo</a>
+    <div class="separador-celular"></div>
+    <a href="modalidades.html" class="botao-acao botao-acao-celular">
+      Modalidades
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <main class="pagina-informativa">
+    <section class="aviso-em-breve" aria-labelledby="tituloEmBreve">
+      <div class="icone-em-breve" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="14" y="5" width="20" height="38" rx="5"></rect>
+          <path d="M21 10h6M22 37h4M20 24l3 3 6-7"></path>
+        </svg>
+      </div>
+      <h1 id="tituloEmBreve">Em <span>breve</span></h1>
+      <div class="detalhe-em-breve" aria-hidden="true"><span></span><span></span><span></span></div>
+    </section>
+  </main>
+
+  <script src="site.js"></script>
+</body>
+</html>

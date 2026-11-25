@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System GFG AI | Tire suas dúvidas</title>
+  <meta name="description" content="Converse com a System GFG AI sobre modalidades, primeiros treinos e suas dúvidas.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" type="image/jpeg" href="imagens/logo cinza.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="folhaEstiloTemaVermelho" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+  <link rel="stylesheet" href="refinamento.css">
+</head>
+<body class="pagina-chat">
+  <header class="cabecalho-chat">
+    <a href="index.html" class="logo" aria-label="System GFG - início">
+      <img class="logo-site" src="imagens/logo cinza.jpeg" data-cinza-src="imagens/logo cinza.jpeg" data-vermelho-src="imagens/logo vermelha.jpeg" alt="">
+      <span class="texto-logo">System <span class="destaque-logo">GFG</span></span>
+    </a>
+    <a class="voltar-inicio-chat" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+      Voltar ao início
+    </a>
+  </header>
+
+  <main class="conteudo-chat">
+    <section class="introducao-chat" aria-labelledby="tituloChat">
+      <div>
+        <p class="sobretitulo-chat"><span></span> UMA NOVA FORMA DE CONHECER O GFG</p>
+        <h1 id="tituloChat">Conversa que aproxima.<br><span>Treino que transforma.</span></h1>
+      </div>
+      <p class="descricao-chat">Tire suas dúvidas sobre as modalidades e prepare-se para seu próximo treino com a System GFG AI.</p>
+    </section>
+
+    <section class="painel-atendimento" aria-label="Conversa com a System GFG AI">
+      <div class="cabecalho-assistente">
+        <div class="identidade-assistente">
+          <div class="avatar-assistente" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4.5 18.2 12l7.3 2.2-7.3 2.2L16 24l-2.2-7.6-7.3-2.2 7.3-2.2L16 4.5Z"></path><path d="m24 20 .9 3.1L28 24l-3.1.9L24 28l-.9-3.1L20 24l3.1-.9L24 20Z"></path></svg>
+          </div>
+          <div>
+            <h2>System GFG AI</h2>
+            <p id="estadoConexao">Verificando conexão…</p>
+          </div>
+        </div>
+        <button type="button" class="etiqueta-demo" id="novaConversa">Nova conversa</button>
+      </div>
+
+      <div class="mensagens-chat" id="mensagensChat" role="log" aria-live="polite" aria-relevant="additions" aria-label="Histórico da conversa"></div>
+      <div class="digitando-assistente" id="digitandoChat" hidden role="status">A IA está preparando sua resposta…</div>
+
+      <div class="atalhos-chat">
+        <p>Experimente perguntar</p>
+        <div class="sugestoes-chat">
+          <button type="button" data-pergunta="Como faço para conhecer as modalidades?">Conhecer modalidades</button>
+          <button type="button" data-pergunta="O que levar para minha primeira aula?">Primeira aula</button>
+          <button type="button" data-pergunta="Qual a diferença entre Boxe e Muay Thai?">Comparar modalidades</button>
+        </div>
+      </div>
+
+      <form class="entrada-chat" id="formularioChat">
+        <label class="visualmente-oculto" for="mensagemChat">Escreva sua pergunta</label>
+        <input id="mensagemChat" name="mensagem" type="text" required maxlength="2000" placeholder="Escreva sua pergunta..." autocomplete="off">
+        <button type="submit" aria-label="Enviar mensagem" title="Enviar mensagem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+        </button>
+      </form>
+      <p class="retorno-chat" id="retornoChat" role="status" aria-live="polite" hidden></p>
+    </section>
+
+  </main>
+
+  <script src="site.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

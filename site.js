@@ -118,9 +118,14 @@
 
     formulario.addEventListener("submit", (evento) => {
       evento.preventDefault();
-      retorno.textContent = "Preenchimento validado. Este site ainda não possui um canal de envio configurado.";
-      retorno.classList.remove("esta-com-erro");
-      retorno.hidden = false;
+      if (!formulario.reportValidity()) return;
+      const mensagem = formulario.elements.message.value.trim();
+      try {
+        sessionStorage.setItem("gfg-pergunta-inicial", mensagem);
+      } catch {
+        // A conversa continua disponível mesmo sem armazenamento local.
+      }
+      window.location.assign("chat.html");
     });
   };
 

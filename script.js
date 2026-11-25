@@ -230,7 +230,7 @@
 
     const aviso = cartao.querySelector(".aviso-aplicativo") || document.createElement("p");
     aviso.className = "aviso-aplicativo";
-    aviso.textContent = "Demonstração visual. Nenhum dado de acesso ou cadastro é enviado ou salvo.";
+    aviso.textContent = "Acesso online em breve. Para informações sobre cadastro, fale com a equipe.";
 
     const cabecalho = cartao.querySelector(".cabecalho-acesso");
     if (!aviso.isConnected) cabecalho.after(retorno, abas, formulario, conteudo, aviso);
@@ -394,7 +394,7 @@
                     <p class="selecione-dia-reserva">Os horários aparecem depois de selecionar uma data.</p>
                   </div>
                 </section>
-                <p class="nota-agendamento">Horários demonstrativos. Nenhuma reserva é enviada ou salva.</p>
+                <p class="nota-agendamento">Confirme os horários e a disponibilidade com a equipe do centro.</p>
                 <button class="botao-confirmar-agendamento" type="submit" disabled>
                   <span>CONFIRMAR AGENDAMENTO <small id="resumoAgendamento">Escolha o dia e o horário</small></span><span aria-hidden="true">&rarr;</span>
                 </button>
@@ -606,10 +606,10 @@
               <div class="estado-vazio-aulas">
                 <span class="icone-vazio-aulas" aria-hidden="true">◷</span>
                 <h3>Nenhuma aula agendada</h3>
-                <p>Esta área é apenas demonstrativa. O agendamento de aulas não está disponível.</p>
+                <p>Para agendar sua próxima aula, entre em contato com a equipe do centro.</p>
               </div>
             </section>
-            <p class="aviso-area-demonstrativa">Os horários e as telas são ilustrativos. Nenhuma aula pode ser agendada por este site.</p>
+            <p class="aviso-area-demonstrativa">Agendamentos devem ser confirmados diretamente com a equipe do centro.</p>
           </main>
         </div>
       `;
@@ -701,7 +701,7 @@
       botao.className = "botao-principal abrir-agendamento";
       botao.type = "button";
       botao.dataset.modalidade = painel.id;
-      botao.textContent = "AGENDAR AULA DEMONSTRATIVA";
+      botao.textContent = "CONSULTAR AGENDAMENTO";
       painel.querySelector(".informacoes-apresentacao").append(botao);
     });
   };
@@ -713,7 +713,7 @@
 
     formulario.addEventListener("submit", (evento) => {
       evento.preventDefault();
-      retorno.textContent = "Este formulário é apenas demonstrativo. Sua mensagem não foi enviada nem salva.";
+      retorno.textContent = "Não foi possível enviar a mensagem. Entre em contato com a equipe ou acesse o chat para tirar suas dúvidas.";
       retorno.classList.remove("esta-com-erro");
       retorno.hidden = false;
     });

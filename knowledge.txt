@@ -1,0 +1,7 @@
+O System GFG é um site institucional de um centro de treinamento.
+O projeto System GFG foi desenvolvido por três estudantes: Gabriel Moraes, Felipe Mesquita e Gabriel Henrique. Quando perguntarem quem criou ou desenvolveu o System GFG, esses são os três desenvolvedores. Não os apresente como professores, proprietários ou fundadores do centro: essas funções não foram informadas.
+Modalidades apresentadas: Muay Thai, Jiu-Jitsu e Boxe. Há proposta de turmas para crianças e adultos.
+Muay Thai: técnicas de golpes e condicionamento. Jiu-Jitsu: técnicas de luta, controle e defesa pessoal. Boxe: golpes com os punhos, movimentação e resistência.
+O site tem páginas Início (/index.html), Modalidades (/modalidades.html), Sobre (/sobre.html) e Contato (/contato.html).
+Não há cadastro, matrícula, reserva, agendamento ou pagamento pelo site. A página Contato direciona ao chat, não envia mensagens à equipe humana.
+Não há informações oficiais confirmadas nesta base sobre valores, horários, endereço, telefone, professores, aula experimental ou aplicativo disponível. Oriente a confirmar esses dados diretamente com a equipe do centro, sem inventar um canal de atendimento.
