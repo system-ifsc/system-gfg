@@ -52,7 +52,8 @@ export function createApp({ apiKey = process.env.GEMINI_API_KEY, model = process
           if (Buffer.byteLength(body) > 100000) return json(413, { error: 'Conversa muito grande. Inicie uma nova conversa.' });
         }
         let payload;
-        try { payload = JSON.parse(body); } catch { return json(400, { error: 'Formato da mensagem inválido.' }); }
+        try { payload = body ? JSON.parse(body) : (typeof req.body === 'string' ? JSON.parse(req.body) : req.body); } catch { return json(400, { error: 'Formato da mensagem inválido.' }); }
+        if (!payload || typeof payload !== 'object') return json(400, { error: 'Formato da mensagem inválido.' });
         if (!validateMessages(payload.messages)) return json(400, { error: 'Conversa inválida. Envie até 20 mensagens alternadas, com até 6.000 caracteres cada.' });
         const knowledge = await readFile(path.join(root, 'knowledge.txt'), 'utf8');
         const requestOptions = {

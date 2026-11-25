@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["knowledge.txt"],
+        "maxDuration": 60
+      }
+    },
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "*.css", "use": "@vercel/static" },
+    { "src": "chat.js", "use": "@vercel/static" },
+    { "src": "site.js", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" },
+    { "src": "imagens/**", "use": "@vercel/static" },
+    { "src": "mudança de cor/style.css", "use": "@vercel/static" },
+    { "src": "mudança de cor/imagens/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(health|chat)", "dest": "/api/index.mjs" },
+    { "src": "/", "dest": "/index.html" },
+    { "handle": "filesystem" }
+  ]
+}
